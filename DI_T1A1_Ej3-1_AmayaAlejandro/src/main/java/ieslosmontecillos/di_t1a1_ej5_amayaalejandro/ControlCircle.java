@@ -37,12 +37,12 @@ public class ControlCircle extends Application {
         bt_big.setOnAction( new AgrandarHandler());
         bt_small.setOnAction( new DisminuirHandler());
 
-        BorderPane borderPane = new BorderPane();
-        borderPane.setTop(circle_pane);
-        borderPane.setCenter(hbox);
+        BorderPane root = new BorderPane();
+        root.setTop(circle_pane);
+        root.setBottom(hbox);
         BorderPane.setAlignment(hbox, Pos.BOTTOM_CENTER);
 
-        Scene scene = new Scene(borderPane, 400, 300);
+        Scene scene = new Scene(root, 400, 300);
         stage.setScene(scene);
         stage.show();
     }
@@ -56,6 +56,7 @@ public class ControlCircle extends Application {
             c.setFill(Color.WHITE);
         }
 
+        //Funciones que modifican el redio del circulo
         public void aumentar(){
             c.setRadius(c.getRadius() + 2);
         }
